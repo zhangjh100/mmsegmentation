@@ -80,11 +80,11 @@ def parse_args():
         description='Convert ACDC annotations to mmsegmentation format')
     parser.add_argument(
         '--src-dir',
-        default='data/ACDC/annotations',
+        default='data/acdc/ann_dir',
         help='Path to ACDC annotations directory')
     parser.add_argument(
         '--out-dir',
-        default='data/ACDC/annotations',
+        default='data/acdc/ann_dir',
         help='Output directory for processed data')
     return parser.parse_args()
 
