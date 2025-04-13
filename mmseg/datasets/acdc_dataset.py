@@ -12,8 +12,8 @@ class acdcDataset(BaseSegDataset):
     ``seg_map_suffix`` are both fixed to '.png'.
     """
     METAINFO = dict(
-        classes=('background', 'LV', 'Myo', 'RV'),
-        palette=[[0, 0, 0], [171, 171, 171], [114, 114, 114], [57, 57, 57]])
+        classes=('LV', 'Myo', 'RV'),
+        palette=[[171, 171, 171], [114, 114, 114], [57, 57, 57]])
 
     def __init__(self,
                  img_suffix='.png',
