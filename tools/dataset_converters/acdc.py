@@ -34,6 +34,7 @@ def ACDC_convert_from_color(arr_3d, palette=ACDC_invert_palette):
     for rgb, class_id in palette.items():
         # Create boolean mask for pixels matching current RGB
         mask = np.all(arr_3d == np.array(rgb).reshape(1, 1, 3), axis=2)
+        print(mask)
         arr_2d[mask] = class_id
 
     return arr_2d
