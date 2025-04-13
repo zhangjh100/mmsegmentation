@@ -52,14 +52,13 @@ def process_annotations(src_dir, out_dir):
 
     # Process both training and validation sets
     # for mode in ['training', 'validation']:
-    for mode in ['train', 'validation']:
+    for mode in ['train', 'val']:
         # Get all PNG annotation files for current mode
         src_path_list = glob.glob(osp.join(src_dir, mode, '*.png'))
         prog_bar = ProgressBar(len(src_path_list))
 
         for img_path in src_path_list:
             # Read RGB annotation image (channel order: RGB)
-            print('Process image')
             label = mmcv.imread(img_path, channel_order='rgb')
 
             # Convert to single-channel class indices
@@ -67,7 +66,7 @@ def process_annotations(src_dir, out_dir):
 
             # Prepare output path (maintain original filename)
             basename = osp.basename(img_path)
-            save_path = osp.join(out_dir, 'train' if mode == 'training' else 'val', basename)
+            save_path = osp.join(out_dir, 'train' if mode == 'train' else 'val', basename)
 
             # Save as single-channel PNG
             Image.fromarray(label_idx).save(save_path)
