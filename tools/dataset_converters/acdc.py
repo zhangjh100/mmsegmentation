@@ -47,7 +47,6 @@ def process_annotations(src_dir, out_dir):
         out_dir (str): Path to output directory
     """
     # Create output directories if they don't exist
-    print('Process acdc dataset')
     mkdir_or_exist(osp.join(out_dir, 'train'))
     mkdir_or_exist(osp.join(out_dir, 'val'))
 
@@ -59,6 +58,7 @@ def process_annotations(src_dir, out_dir):
 
         for img_path in src_path_list:
             # Read RGB annotation image (channel order: RGB)
+            print('Process image')
             label = mmcv.imread(img_path, channel_order='rgb')
 
             # Convert to single-channel class indices
