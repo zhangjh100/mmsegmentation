@@ -258,9 +258,11 @@ class IoUMetric(BaseMetric):
                 acc = total_area_intersect / total_area_label
                 dice = 2 * total_area_intersect / (
                         total_area_pred_label + total_area_label)
+                recall = total_area_intersect / total_area_label
                 ret_metrics['IoU'] = iou
                 ret_metrics['Acc'] = acc
                 ret_metrics['Dice'] = dice
+                ret_metrics['Recall'] = recall
             elif metric == 'mDice':
                 dice = 2 * total_area_intersect / (
                     total_area_pred_label + total_area_label)
