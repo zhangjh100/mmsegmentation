@@ -34,7 +34,6 @@ def ACDC_convert_from_color(arr_3d, palette=ACDC_invert_palette):
     for rgb, class_id in palette.items():
         # Create boolean mask for pixels matching current RGB
         mask = np.all(arr_3d == np.array(rgb).reshape(1, 1, 3), axis=2)
-        print(mask)
         arr_2d[mask] = class_id
 
     return arr_2d
@@ -48,6 +47,7 @@ def process_annotations(src_dir, out_dir):
         out_dir (str): Path to output directory
     """
     # Create output directories if they don't exist
+    print('Process acdc dataset')
     mkdir_or_exist(osp.join(out_dir, 'train'))
     mkdir_or_exist(osp.join(out_dir, 'val'))
 
