@@ -51,7 +51,8 @@ def process_annotations(src_dir, out_dir):
     mkdir_or_exist(osp.join(out_dir, 'val'))
 
     # Process both training and validation sets
-    for mode in ['training', 'validation']:
+    # for mode in ['training', 'validation']:
+    for mode in ['train', 'validation']:
         # Get all PNG annotation files for current mode
         src_path_list = glob.glob(osp.join(src_dir, mode, '*.png'))
         prog_bar = ProgressBar(len(src_path_list))
