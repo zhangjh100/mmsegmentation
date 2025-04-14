@@ -1,7 +1,7 @@
 # dataset settings
 dataset_type = 'laDataset'
 data_root = 'data/la'
-crop_size = (128, 128)
+crop_size = (256, 256)
 train_pipeline = [
     dict(type='LoadImageFromFile'),
     dict(type='LoadAnnotations', reduce_zero_label=True),
