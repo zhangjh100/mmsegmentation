@@ -8,16 +8,16 @@ from mmengine.utils import ProgressBar, mkdir_or_exist
 from PIL import Image
 
 # ACDC dataset color palette (RGB values for each class)
-ACDC_palette = {
+la_palette = {
     0: [0, 0, 0],  # Background (unrecognized classes)
     1: [255, 255, 255]  # LA
 }
 
 # Inverse palette mapping (RGB tuple -> class index)
-la_invert_palette = {tuple(v): k for k, v in ACDC_palette.items()}
+la_invert_palette = {tuple(v): k for k, v in la_palette.items()}
 
 
-def ACDC_convert_from_color(arr_3d, palette=la_invert_palette):
+def la_convert_from_color(arr_3d, palette=la_invert_palette):
     """Convert RGB annotation images to single-channel class index maps.
 
     Args:
@@ -60,7 +60,7 @@ def process_annotations(src_dir, out_dir):
             label = mmcv.imread(img_path, channel_order='rgb')
 
             # Convert to single-channel class indices
-            label_idx = ACDC_convert_from_color(label)
+            label_idx = la_convert_from_color(label)
 
             # Prepare output path (maintain original filename)
             basename = osp.basename(img_path)
