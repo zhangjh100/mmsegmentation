@@ -1,0 +1,8 @@
+_base_ = [
+    '../_base_/models/fastfcn_r50-d32_jpu_psp.py',
+    '../_base_/datasets/acdc.py', '../_base_/default_runtime.py',
+    '../_base_/schedules/schedule_40k.py'
+]
+crop_size = (256, 256)
+data_preprocessor = dict(size=crop_size)
+model = dict(data_preprocessor=data_preprocessor)
