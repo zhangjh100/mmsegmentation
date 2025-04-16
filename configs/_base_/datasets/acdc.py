@@ -1,13 +1,14 @@
 # dataset settings
 dataset_type = 'acdcDataset'
 data_root = 'data/acdc'
-crop_size = (256, 256)
+img_scale = (256, 256)
+crop_size = (64, 64)
 train_pipeline = [
     dict(type='LoadImageFromFile'),
     dict(type='LoadAnnotations', reduce_zero_label=True),
     dict(
         type='RandomResize',
-        scale=(256, 256),
+        scale=img_scale,
         ratio_range=(0.5, 2.0),
         keep_ratio=True),
     dict(type='RandomCrop', crop_size=crop_size, cat_max_ratio=0.75),
