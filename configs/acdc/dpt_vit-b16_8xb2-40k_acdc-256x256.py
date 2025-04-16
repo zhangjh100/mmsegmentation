@@ -1,6 +1,6 @@
 _base_ = [
     '../_base_/models/dpt_vit-b16.py', '../_base_/datasets/acdc.py',
-    '../_base_/default_runtime.py', '../_base_/schedules/schedule_40k.py'
+    '../_base_/default_runtime.py', '../_base_/schedules/schedule_160k.py'
 ]
 crop_size = (256, 256)
 data_preprocessor = dict(size=crop_size)
@@ -28,12 +28,12 @@ param_scheduler = [
         eta_min=0.0,
         power=1.0,
         begin=1500,
-        end=20000,
+        end=160000,
         by_epoch=False,
     )
 ]
 
 # By default, models are trained on 8 GPUs with 2 images per GPU
-train_dataloader = dict(batch_size=8, num_workers=2)
-val_dataloader = dict(batch_size=1, num_workers=4)
+train_dataloader = dict(batch_size=16, num_workers=4)
+val_dataloader = dict(batch_size=8, num_workers=4)
 test_dataloader = val_dataloader
