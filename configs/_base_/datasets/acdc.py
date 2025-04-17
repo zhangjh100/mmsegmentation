@@ -1,8 +1,8 @@
 # dataset settings
 dataset_type = 'acdcDataset'
 data_root = 'data/acdc'
-img_scale = (128, 256)
-crop_size = (256, 256)
+img_scale = (256, 256)
+crop_size = (128, 256)
 train_pipeline = [
     dict(type='LoadImageFromFile'),
     dict(type='LoadAnnotations', reduce_zero_label=True),
