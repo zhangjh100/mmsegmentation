@@ -9,8 +9,8 @@ from PIL import Image
 
 # ACDC dataset color palette (RGB values for each class)
 la_palette = {
-    0: [0, 0, 0],  # Background (unrecognized classes)
-    1: [255, 255, 255]  # LA
+    1: [0, 0, 0],  # Background (unrecognized classes)
+    2: [255, 255, 255]  # LA
 }
 
 # Inverse palette mapping (RGB tuple -> class index)
