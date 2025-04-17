@@ -2,7 +2,7 @@
 dataset_type = 'acdcDataset'
 data_root = 'data/acdc'
 img_scale = (256, 256)
-crop_size = (64, 64)
+crop_size = (256, 256)
 train_pipeline = [
     dict(type='LoadImageFromFile'),
     dict(type='LoadAnnotations', reduce_zero_label=True),
@@ -41,8 +41,8 @@ tta_pipeline = [
         ])
 ]
 train_dataloader = dict(
-    batch_size=4,
-    num_workers=4,
+    batch_size=2,
+    num_workers=2,
     persistent_workers=True,
     sampler=dict(type='InfiniteSampler', shuffle=True),
     dataset=dict(
