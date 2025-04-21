@@ -42,6 +42,7 @@ from .transforms import (CLAHE, AdjustGamma, Albu, BioMedical3DPad,
                          SegRescale)
 from .voc import PascalVOCDataset
 from .acdc_dataset import acdcDataset
+from .synapse_dataset import my_synapseDataset
 
 # yapf: enable
 __all__ = [
@@ -63,5 +64,5 @@ __all__ = [
     'MapillaryDataset_v2', 'Albu', 'LEVIRCDDataset',
     'LoadMultipleRSImageFromFile', 'LoadSingleRSImageFromFile',
     'ConcatCDInput', 'BaseCDDataset', 'DSDLSegDataset', 'BDD100KDataset',
-    'NYUDataset', 'HSIDrive20Dataset', 'acdcDataset', 'laDataset'
+    'NYUDataset', 'HSIDrive20Dataset', 'acdcDataset', 'laDataset', 'my_synapseDataset'
 ]
