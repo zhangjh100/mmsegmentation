@@ -27,6 +27,7 @@ from .refuge import REFUGEDataset
 from .stare import STAREDataset
 from .synapse import SynapseDataset
 from .la import laDataset
+from .rv import rvDataset
 # yapf: disable
 from .transforms import (CLAHE, AdjustGamma, Albu, BioMedical3DPad,
                          BioMedical3DRandomCrop, BioMedical3DRandomFlip,
@@ -64,5 +65,5 @@ __all__ = [
     'MapillaryDataset_v2', 'Albu', 'LEVIRCDDataset',
     'LoadMultipleRSImageFromFile', 'LoadSingleRSImageFromFile',
     'ConcatCDInput', 'BaseCDDataset', 'DSDLSegDataset', 'BDD100KDataset',
-    'NYUDataset', 'HSIDrive20Dataset', 'acdcDataset', 'laDataset', 'my_synapseDataset'
+    'NYUDataset', 'HSIDrive20Dataset', 'acdcDataset', 'laDataset', 'my_synapseDataset', 'rvDataset'
 ]

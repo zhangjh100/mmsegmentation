@@ -12,7 +12,7 @@ param_scheduler = [
         by_epoch=False)
 ]
 # training schedule for 40k
-train_cfg = dict(type='IterBasedTrainLoop', max_iters=20000, val_interval=2000)
+train_cfg = dict(type='IterBasedTrainLoop', max_iters=30000, val_interval=3000)
 val_cfg = dict(type='ValLoop')
 test_cfg = dict(type='TestLoop')
 default_hooks = dict(
