@@ -11,8 +11,8 @@ train_pipeline = [
         ratio_range=(0.5, 2.0),
         keep_ratio=True),
     dict(type='RandomCrop', crop_size=crop_size, cat_max_ratio=0.75),
-    # dict(type='RandomFlip', prob=0.5),
-    # dict(type='PhotoMetricDistortion'),
+    dict(type='RandomFlip', prob=0.5),
+    dict(type='PhotoMetricDistortion'),
     dict(type='PackSegInputs')
 ]
 test_pipeline = [
