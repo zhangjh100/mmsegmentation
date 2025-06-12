@@ -8,7 +8,7 @@ from mmengine.utils import ProgressBar, mkdir_or_exist
 from PIL import Image
 
 # ACDC dataset color palette (RGB values for each class)
-ACDC_palette = {
+rv_palette = {
     1: [0, 0, 0],  # Background (unrecognized classes)
     2: [255, 255, 255]  # RV
 }
@@ -76,7 +76,7 @@ def process_annotations(src_dir, out_dir):
 def parse_args():
     """Parse command line arguments."""
     parser = argparse.ArgumentParser(
-        description='Convert ACDC annotations to mmsegmentation format')
+        description='Convert RV annotations to mmsegmentation format')
     parser.add_argument(
         '--src-dir',
         default='data/rv/annotations',
@@ -91,7 +91,7 @@ def parse_args():
 def main():
     """Main function for annotation conversion."""
     args = parse_args()
-    print(f'Processing ACDC annotations from {args.src_dir}...')
+    print(f'Processing RV annotations from {args.src_dir}...')
 
     # Process all annotations
     process_annotations(args.src_dir, args.out_dir)
