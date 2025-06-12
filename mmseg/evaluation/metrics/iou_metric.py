@@ -183,7 +183,6 @@ class IoUMetric(BaseMetric):
         """
 
         mask = (label != ignore_index)
-        print(pred_label.shape, label.shape)
         pred_label = pred_label[mask]
         label = label[mask]
 
