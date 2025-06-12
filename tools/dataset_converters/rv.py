@@ -46,11 +46,11 @@ def process_annotations(src_dir, out_dir):
     """
     # Create output directories if they don't exist
     mkdir_or_exist(osp.join(out_dir, 'train'))
-    mkdir_or_exist(osp.join(out_dir, 'val'))
+    mkdir_or_exist(osp.join(out_dir, 'test-1'))
 
     # Process both training and validation sets
     # for mode in ['training', 'validation']:
-    for mode in ['train', 'val']:
+    for mode in ['train', 'test-1']:
         # Get all PNG annotation files for current mode
         src_path_list = glob.glob(osp.join(src_dir, mode, '*.png'))
         prog_bar = ProgressBar(len(src_path_list))
@@ -64,7 +64,7 @@ def process_annotations(src_dir, out_dir):
 
             # Prepare output path (maintain original filename)
             basename = osp.basename(img_path)
-            save_path = osp.join(out_dir, 'train' if mode == 'train' else 'val', basename)
+            save_path = osp.join(out_dir, 'train' if mode == 'train' else 'test-1', basename)
 
             # Save as single-channel PNG
             Image.fromarray(label_idx).save(save_path)
