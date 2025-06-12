@@ -58,7 +58,7 @@ val_dataloader = dict(
     dataset=dict(
         type=dataset_type,
         data_root=data_root,
-        data_prefix=dict(img_path='images/test-1', seg_map_path='annotations/test-1'),
+        data_prefix=dict(img_path='images/val', seg_map_path='annotations/val'),
         pipeline=test_pipeline))
 test_dataloader = val_dataloader
 
